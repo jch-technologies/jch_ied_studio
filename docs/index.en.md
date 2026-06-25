@@ -26,8 +26,8 @@ over MMS, receives and sends GOOSE and Sampled Values via the separate
   Subscribe + Publish for GOOSE (EtherType 0x88B8) and SV (0x88BA).
 - **SCL editor** — Substations, Voltage Levels, Bays, ConductingEquipment,
   IEDs, LDevices, LNs, DataSets, RCBs, GoCBs, Inputs. Export as
-  SCD/ICD/IID/CID/SED. Three built-in demo projects for training +
-  conformance testing.
+  SCD/ICD/IID/CID/SED. Three built-in demo projects for education +
+  testing.
 - **Spec-compliant SCL export** — `xsi:schemaLocation`, `RptEnabled`,
   correct P-element ordering, transitive DataTypeTemplates closure.
   

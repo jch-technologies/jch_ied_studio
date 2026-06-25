@@ -27,7 +27,7 @@ IEDs per MMS, empfängt und sendet GOOSE und Sampled Values über die separate
 - **SCL-Editor** — Substations, Voltage Levels, Bays, ConductingEquipment,
   IEDs, LDevices, LNs, DataSets, RCBs, GoCBs, Inputs. Export als
   SCD/ICD/IID/CID/SED. Drei eingebaute Demo-Projekte für Schulung +
-  Konformitätstest.
+  Test.
 - **Spec-konformer SCL-Export** — `xsi:schemaLocation`, `RptEnabled`,
   korrektes P-Element-Ordering, transitive DataTypeTemplates-Closure.
 ---

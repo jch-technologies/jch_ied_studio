@@ -1,10 +1,8 @@
 ---
 title: JCH GOOSE Bridge
+lang: de
+alt_url: /bridge.en/
 ---
-
-# JCH GOOSE Bridge
-
-← [Zurück zur Übersicht](index.md) · [English version](bridge.en.md) · [Support](support.md)
 
 Kostenloses macOS-Helferprogramm, das GOOSE- und Sampled-Values-Frames
 via libpcap mit dem Stationsnetz austauscht. JCH IED Studio (iPad/Mac)
@@ -12,12 +10,17 @@ verbindet sich per WebSocket.
 
 ## Download
 
-- [**Aktuelle Version (.dmg, 2.6 MB)**]({{ '/JCH-GOOSE-Bridge-0.1.0.dmg' | relative_url }})
+- [**Version 0.2.1 (.dmg, 2.8 MB)**]({{ '/JCH-GOOSE-Bridge-0.2.1.dmg' | relative_url }})
+
+**Neu in 0.2.1:** Empfängt GOOSE- und Sampled-Values-Telegramme jetzt auch mit
+VLAN-Tag (802.1Q) — in Stationsnetzen der Normalfall. Mit älteren Versionen
+kamen solche Telegramme nicht an. Update empfohlen: neue Version einfach über
+die alte in `Programme` ziehen; Pairing-Code und Einstellungen bleiben erhalten.
 
 > **Warum nicht über den Mac App Store?**
 > Die Bridge braucht `libpcap`-Zugriff auf rohe Ethernet-Frames, und das
 > verbietet die App-Store-Sandbox. Deshalb verteilen wir die Bridge direkt
-> als signiertes `.dmg`.
+> als signiertes und von Apple notarisiertes `.dmg`.
 
 ## Systemvoraussetzungen
 
@@ -29,17 +32,14 @@ verbindet sich per WebSocket.
 
 ### 1. DMG laden und Bridge in `/Applications` ziehen
 
-Lade die aktuelle [`.dmg`]({{ '/JCH-GOOSE-Bridge-0.1.0.dmg' | relative_url }}), öffne sie per
+Lade die aktuelle [`.dmg`]({{ '/JCH-GOOSE-Bridge-0.2.1.dmg' | relative_url }}), öffne sie per
 Doppelklick und ziehe **JCH 61850 GOOSE Bridge** in den `Programme`-Ordner.
 
-### 2. Erststart: Gatekeeper bestätigen
+### 2. Erststart
 
-Die Bridge ist ad-hoc-signiert (kein Apple-Developer-Zertifikat), deshalb
-blockiert Gatekeeper den ersten Start. Lösung:
-
-- **Rechtsklick** auf das App-Icon → *Öffnen*.
-- Im aufpoppenden Dialog nochmal auf *Öffnen*.
-- Beim zweiten Start startet die App ohne Rückfrage.
+Die Bridge ist mit einem Apple-Developer-ID-Zertifikat signiert und von Apple
+notarisiert. Beim ersten Start fragt macOS nur einmal, ob die aus dem Internet
+geladene App geöffnet werden soll — mit *Öffnen* bestätigen.
 
 ### 3. BPF-Zugriff freigeben (einmalig)
 

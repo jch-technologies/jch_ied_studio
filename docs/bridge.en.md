@@ -1,10 +1,8 @@
 ---
 title: JCH GOOSE Bridge
+lang: en
+alt_url: /bridge/
 ---
-
-# JCH GOOSE Bridge
-
-← [Back to overview](index.md) · [Deutsche Version](bridge.md) · [Support](support.md)
 
 Free macOS helper that exchanges GOOSE and Sampled-Values frames with the
 station bus via libpcap. JCH IED Studio (iPad/Mac) connects to it over
@@ -12,12 +10,17 @@ WebSocket.
 
 ## Download
 
-- [**Latest version (.dmg, 2.6 MB)**]({{ '/JCH-GOOSE-Bridge-0.1.0.dmg' | relative_url }})
+- [**Version 0.2.1 (.dmg, 2.8 MB)**]({{ '/JCH-GOOSE-Bridge-0.2.1.dmg' | relative_url }})
+
+**New in 0.2.1:** Now also receives GOOSE and Sampled Values frames with a
+VLAN tag (802.1Q) — the norm in substation networks. Older versions did not
+receive such frames. Update recommended: simply drag the new version over the
+old one in `Applications`; pairing code and settings are kept.
 
 > **Why not via the Mac App Store?**
 > The Bridge needs `libpcap` access to raw Ethernet frames, which the
-> App Store sandbox forbids. That's why we ship the Bridge as a signed
-> `.dmg` directly.
+> App Store sandbox forbids. That's why we ship the Bridge directly as a
+> signed `.dmg`, notarized by Apple.
 
 ## System requirements
 
@@ -29,17 +32,14 @@ WebSocket.
 
 ### 1. Open the DMG and drag the Bridge into `/Applications`
 
-Download the latest [`.dmg`]({{ '/JCH-GOOSE-Bridge-0.1.0.dmg' | relative_url }}), open it
+Download the latest [`.dmg`]({{ '/JCH-GOOSE-Bridge-0.2.1.dmg' | relative_url }}), open it
 by double-clicking, and drag **JCH 61850 GOOSE Bridge** into the `Applications` folder.
 
-### 2. First launch: confirm Gatekeeper
+### 2. First launch
 
-The Bridge is ad-hoc signed (no Apple Developer certificate), so Gatekeeper
-blocks the first launch. Solution:
-
-- **Right-click** on the app icon → *Open*.
-- In the popup dialog, click *Open* again.
-- On the second launch, the app starts without prompting.
+The Bridge is signed with an Apple Developer ID certificate and notarized by
+Apple. On first launch, macOS asks once whether to open an app downloaded from
+the internet — confirm with *Open*.
 
 ### 3. Grant BPF access (one-time)
 
